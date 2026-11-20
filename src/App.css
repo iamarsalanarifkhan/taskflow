@@ -1,0 +1,156 @@
+:root {
+  --primary: #0D99FF;
+  --accent: #FFD43B;
+  --background: #FFFFFF;
+  --text: #172033;
+  --muted: #8490A3;
+  --border: #E9EDF4;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: #FFFFFF;
+  border-right: 1px solid var(--border);
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 55px;
+}
+
+.brand-icon {
+  background: var(--primary);
+  color: white;
+  height: 42px;
+  width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.sidebar-brand h4 {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.sidebar-brand h4 span {
+  color: var(--primary);
+}
+
+.sidebar-label {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding-left: 14px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-nav .nav-item {
+  color: #667085;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.sidebar-nav .nav-item:hover {
+  background: #F0F8FF;
+  color: var(--primary);
+}
+
+.sidebar-nav .nav-item.active {
+  background: #e8f5ff;
+  color: #0d99ff;
+  border-left: 4px solid #ffd43b;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 15px;
+}
+
+.footer-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 40px;
+  background: #F8FAFD;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .sidebar-brand {
+    margin-bottom: 20px;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sidebar-nav .nav-item {
+    padding: 10px 12px;
+  }
+
+  .sidebar-footer,
+  .sidebar-label {
+    display: none;
+  }
+
+  .main-content {
+    padding: 20px 12px;
+  }
+}
